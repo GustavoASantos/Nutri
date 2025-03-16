@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name" translatable="false">Nutri</string>
+    <string name="menuReportBug">Report Bug</string>
+    <string name="sortBy">Sort by:</string>
+    <string name="bestMatch">Best Match</string>
+    <string name="rating">Rating</string>
+    <string name="popularity">Popularity</string>
+    <string name="aboutMe">About me</string>
+    <string name="more">More</string>
+    <string name="less">Less</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menuReportBug">Reportar Erro</string>
+    <string name="sortBy">Ordenar por:</string>
+    <string name="bestMatch">Melhor Correspondência</string>
+    <string name="rating">Classificação</string>
+    <string name="popularity">Popularidade</string>
+    <string name="aboutMe">Sobre mim</string>
+    <string name="more">Mais</string>
+    <string name="less">Menos</string>
+</resources>

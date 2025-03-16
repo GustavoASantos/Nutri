@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/Widget.Material3.CardView.Filled"
+    app:cardCornerRadius="18dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_marginHorizontal="8dp"
+    android:translationY="18dp">
+
+    <LinearLayout
+        android:layout_marginTop="24dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/professional_details" />
+
+        <include layout="@layout/about_me"
+            android:id="@+id/aboutMeContainer"
+            android:visibility="gone" />
+
+        <include layout="@layout/progress_indicator"
+            android:id="@+id/progressContainer"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

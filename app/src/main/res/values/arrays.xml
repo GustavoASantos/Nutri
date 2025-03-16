@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sortOptions">
+        <item>@string/bestMatch</item>
+        <item>@string/rating</item>
+        <item>@string/popularity</item>
+    </string-array>
+    <string-array name="sortOptionsValues">
+        <item>best_match</item>
+        <item>rating</item>
+        <item>most_popular</item>
+    </string-array>
+</resources>

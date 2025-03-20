@@ -24,17 +24,30 @@ class SearchRepository(
         if (isCacheValid && cachedPage?.response?.professionals?.isNotEmpty() == true) {
             return cachedPage.response
         } else {
-            val response = RetrofitClient.apiService
-                .getProfessionals(limit = limit, offset = offset, sortBy = sortBy)
-            cacheDao.cacheResponse(
-                DatabaseSearchApiResponse(
-                    key = getKey(limit, sortBy, offset),
-                    sortOption = sortBy,
-                    offset = offset,
-                    response = response,
-                    timestamp = System.currentTimeMillis()
+            val response = try {
+                RetrofitClient.apiService
+                    .getProfessionals(limit = limit, offset = offset, sortBy = sortBy)
+            } catch (_: Exception) {
+                SearchApiResponse(
+                    count = 0,
+                    professionals = emptyList(),
+                    limit = limit,
+                    offset = offset
                 )
-            )
+            }
+
+            if (response.professionals.isNotEmpty()) {
+                cacheDao.cacheResponse(
+                    DatabaseSearchApiResponse(
+                        key = getKey(limit, sortBy, offset),
+                        sortOption = sortBy,
+                        offset = offset,
+                        response = response,
+                        timestamp = System.currentTimeMillis()
+                    )
+                )
+            }
+
             return response
         }
     }

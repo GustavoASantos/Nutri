@@ -11,8 +11,8 @@ import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
 class DetailsViewModel(private val repository: ProfessionalsRepository) : ViewModel() {
-    private val _professional = MutableLiveData<NutritionProfessional>()
-    val professional: LiveData<NutritionProfessional> = _professional
+    private val _professional = MutableLiveData<NutritionProfessional?>()
+    val professional: LiveData<NutritionProfessional?> = _professional
 
     private val _isLoading = MutableLiveData<Boolean>()
     val isLoading: LiveData<Boolean> = _isLoading

@@ -11,15 +11,21 @@ class ProfessionalsRepository(
     suspend fun fetchProfessional(
         context: Context,
         id: Int
-    ): NutritionProfessional {
+    ): NutritionProfessional? {
         val cachedPro = storageDao.getCachedProfessional(id)
 
         if (cachedPro != null && !isInternetAvailable(context)) {
             return cachedPro
         } else {
-            val response = RetrofitClient.apiService
-                .getProfessional(id)
-            storageDao.cacheProfessional(response)
+            val response = try {
+                RetrofitClient.apiService
+                    .getProfessional(id)
+            } catch (_: Exception) {
+                null
+            }
+            response?.let {
+                storageDao.cacheProfessional(response)
+            }
             return response
         }
     }

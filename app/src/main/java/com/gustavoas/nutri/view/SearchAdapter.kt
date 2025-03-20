@@ -137,6 +137,7 @@ class SearchAdapter(private val items: MutableList<NutritionProfessional>) :
             name.text = professional.name
             rating.text = getRatingString(professional.rating, professional.rating_count)
             languages.text = professional.languages.joinToString(", ")
+            expertises.removeAllViews()
 
             professional.expertise.forEach {
                 val chip = Chip(itemView.context)
